@@ -12,8 +12,15 @@ import "swiper/css/bundle";
 import "../common/assets/css/react-slick.css";
 import "../common/assets/css/rc-collapse.css";
 import "rc-collapse/assets/index.css";
+import { useRouter } from "next/router";
 
 function App({ Component, pageProps }) {
+  const router = useRouter();
+  const path = (/#!(\/.*)$/.exec(router.asPath) || [])[1];
+  if (path) {
+    router.replace(path);
+  }
+
   return (
     <Provider store={store}>
       <LoadingScreen />

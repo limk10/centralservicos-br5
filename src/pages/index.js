@@ -5,17 +5,17 @@ import React, { Fragment } from "react";
 import Head from "next/head";
 import Sticky from "react-stickynode";
 import { ThemeProvider } from "styled-components";
-import { theme } from "../../common/theme/default";
-import { GlobalStyle, ContentWrapper } from "../../containers/style";
-import { DrawerProvider } from "../../common/contexts/DrawerContext";
-import Navbar from "../../containers/Navbar";
-import Banner from "../../containers/BannerSection";
-import Transactions from "../../containers/Transaction";
-import Footer from "../../containers/Footer";
-import { handleLoading } from "../../redux/general/generalSlice";
-import { getSeller } from "../../services/api/seller";
-import ResetCSS from "../../common/assets/css/style";
-import { setSeller } from "../../redux/seller/sellerSlice";
+import { theme } from "../common/theme/default";
+import { GlobalStyle, ContentWrapper } from "../containers/style";
+import { DrawerProvider } from "../common/contexts/DrawerContext";
+import Navbar from "../containers/Navbar";
+import Banner from "../containers/BannerSection";
+import Transactions from "../containers/Transaction";
+import Footer from "../containers/Footer";
+import { handleLoading } from "../redux/general/generalSlice";
+import { getSeller } from "../services/api/seller";
+import ResetCSS from "../common/assets/css/style";
+import { setSeller } from "../redux/seller/sellerSlice";
 
 const App = () => {
   const router = useRouter();
