@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const ResetCSS = createGlobalStyle`
   ::selection {
@@ -115,6 +115,9 @@ const ResetCSS = createGlobalStyle`
         opacity: 0.88 !important;
       }
     }
+  }
+  .sticky-inner-wrapper  {
+    z-index: 999 !important;
   }
 `;
 export default ResetCSS;

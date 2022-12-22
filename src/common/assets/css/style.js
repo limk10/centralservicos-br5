@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const ResetCSS = createGlobalStyle`
   ::selection {
@@ -73,6 +73,8 @@ const ResetCSS = createGlobalStyle`
   }
 
   .reuseModalHolder {
+    background-color: transparent !important;
+    border-width: 0;
     padding: 0 !important;
     &.demo_switcher_modal {
       border: 0 !important;
@@ -115,6 +117,10 @@ const ResetCSS = createGlobalStyle`
         opacity: 0.88 !important;
       }
     }
+  }
+
+  .sticky-inner-wrapper  {
+    z-index: 999 !important;
   }
 `;
 export default ResetCSS;

@@ -16,18 +16,52 @@ import { handleLoading } from "../redux/general/generalSlice";
 import { getSeller } from "../services/api/seller";
 import ResetCSS from "../common/assets/css/style";
 import { setSeller } from "../redux/seller/sellerSlice";
+import { openModal, closeModal } from "@redq/reuse-modal";
+import Button from "../common/components/Button";
+import ContinueInformationWrapper from "../containers/ContinueInformationWrapper";
 
 const App = () => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const { id } = router.query;
+  const { id, company } = router.query;
+
+  const CloseModalButton = () => (
+    <Button
+      className="modalCloseBtn"
+      variant="fab"
+      onClick={() => closeModal()}
+      icon={<i className="flaticon-plus-symbol" />}
+    />
+  );
+
+  const handleContinueInformationWrapper = () => {
+    openModal({
+      config: {
+        className: "login-modal",
+        disableDragging: true,
+        width: "100%",
+        height: "70%",
+        animationFrom: { transform: "translateY(100px)" },
+        animationTo: { transform: "translateY(0)" },
+        transition: {
+          mass: 1,
+          tension: 180,
+          friction: 26,
+        },
+      },
+      component: ContinueInformationWrapper,
+      componentProps: {},
+      closeComponent: CloseModalButton,
+      closeOnClickOutside: false,
+    });
+  };
 
   const init = async () => {
     try {
-      // 632167f4c9e7de54b5c924c7
       dispatch(handleLoading(true));
       const { data } = await getSeller(id);
       dispatch(setSeller(data));
+      if (company) handleContinueInformationWrapper();
     } catch (error) {
       Router.push("/404");
       console.log(error);

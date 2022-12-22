@@ -1,7 +1,7 @@
 import axios from "axios";
 import _ from "lodash";
 
-const baseURL = "https://apiteste.br5beneficios.com.br/";
+const baseURL = "https://warm-phones-joke-201-71-155-225.loca.lt/";
 
 const api = axios.create({
   baseURL,
