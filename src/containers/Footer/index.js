@@ -21,7 +21,7 @@ const Footer = ({
   return (
     <FooterWrapper id="footerSection">
       <BgImageWrapper>
-        <Image src="assets/image/footer-bg.svg" alt="Footer background" />
+        <Image src="/assets/image/footer-bg.svg" alt="Footer background" />
       </BgImageWrapper>
       <Container noGutter mobileGutter width="1200px">
         <Box className="row mainRow" {...row}>

@@ -79,15 +79,6 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Fragment>
-        <Head>
-          <title>Auto atendimento | BR5 Benefícios</title>
-          <meta
-            name="Description"
-            content="Central de serviços BR5 Benfícios"
-          />
-        </Head>
-        <ResetCSS />
-        <GlobalStyle />
         <ContentWrapper>
           <Sticky top={0} innerZ={9999} activeClass="sticky-nav-active">
             <DrawerProvider>

@@ -14,10 +14,10 @@ import { MENU_ITEMS } from "../../common/data";
 import ScrollSpyMenu from "../../common/components/ScrollSpyMenu";
 
 const LogoImage = {
-  src: "assets/image/logo-white.png",
+  src: "/assets/image/logo-white.png",
 };
 const LogoImageAlt = {
-  src: "assets/image/logo.png",
+  src: "/assets/image/logo.png",
 };
 
 const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {

@@ -39,38 +39,6 @@ const BannerSection = ({
     });
   };
 
-  const SellerInformation = () => (
-    <>
-      {!!telefones?.length && endereco && (
-        <>
-          <Text
-            content="Entre em contato com a gente"
-            mt={4}
-            {...titleDescription}
-          />
-          <Fade down>
-            <>
-              {!!telefones?.length &&
-                telefones.map(({ numero }) => (
-                  <Text key={numero} content={numero} {...subdescription} />
-                ))}
-            </>
-          </Fade>
-
-          <Text content="Venha nos visitar" mt={6} {...titleDescription} />
-
-          <Fade down>
-            <>
-              <Text
-                content={`${endereco?.rua}, ${endereco?.numero}, ${endereco?.bairro} - ${endereco?.cidadeNome}/${endereco?.estado}`}
-                {...subdescription}
-              />
-            </>
-          </Fade>
-        </>
-      )}
-    </>
-  );
 
   return (
     <BannerWrapper id="banner_section">
@@ -81,32 +49,13 @@ const BannerSection = ({
       <Container>
         <Box className="row" {...row}>
           <Box className="col" {...col}>
-            <Heading content="Central de Serviços" {...title} />
-
-            <Text
-              content={`Seja bem vindo a ${information?.nome || "BR5 Benefícios"
-                }`}
-              {...description}
-            />
-
             <Fade down>
-              <SellerInformation />
+              <Heading content="Cotação de Seguros" {...title} />
 
-              <Fragment>
-                <Button
-                  onClick={goToSection}
-                  mt={10}
-                  title="VER SERVIÇOS"
-                  {...btnStyle}
-                />
-                <Button
-                  onClick={openWhatsappLink}
-                  title="Dúvidas? Me chame no Zap"
-                  variant="textButton"
-                  icon={<i className="flaticon-next" />}
-                  {...outlineBtnStyle}
-                />
-              </Fragment>
+              <Text
+                content={`Olá, preencha os campos abaixo, encontraremos os melhores preços de seguro pra você.`}
+                {...description}
+              />
             </Fade>
           </Box>
         </Box>

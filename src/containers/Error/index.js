@@ -19,7 +19,7 @@ const ErrorSec = ({ imageWrapper, title, text, reloadButton, homeButton }) => {
     <ErrorWrapper>
       <ErrorContent>
         <Box {...imageWrapper} className="image-wrapper">
-          <NextImage src="assets/image/404.svg" alt="404" />
+          <NextImage src="/assets/image/404.svg" alt="404" />
         </Box>
         <Heading {...title} content="Page not found!" />
         <Text

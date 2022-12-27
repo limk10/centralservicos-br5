@@ -42,10 +42,6 @@ export default class CustomDocument extends Document {
           />
           <script type="text/javascript" src="static/robocode.js" async />
 
-          {/* <link
-            rel="icon"
-            href="https://react-next-landing.redq.io/_next/static/images/favicon-ec2551afb2782a53fb493269d1ba4efe.png"
-          /> */}
         </Head>
         <body>
           <Main />

@@ -2,25 +2,25 @@ import React from "react";
 import Particles from "react-tsparticles";
 
 const Particle1 = {
-  src: "assets/image/particles/particle-1.png",
+  src: "/assets/image/particles/particle-1.png",
 };
 const Particle2 = {
-  src: "assets/image/particles/particle-2.png",
+  src: "/assets/image/particles/particle-2.png",
 };
 const Particle3 = {
-  src: "assets/image/particles/particle-3.png",
+  src: "/assets/image/particles/particle-3.png",
 };
 const Particle4 = {
-  src: "assets/image/particles/particle-4.png",
+  src: "/assets/image/particles/particle-4.png",
 };
 const Particle5 = {
-  src: "assets/image/particles/particle-5.png",
+  src: "/assets/image/particles/particle-5.png",
 };
 const Particle6 = {
-  src: "assets/image/particles/particle-6.png",
+  src: "/assets/image/particles/particle-6.png",
 };
 const Particle7 = {
-  src: "assets/image/particles/particle-7.png",
+  src: "/assets/image/particles/particle-7.png",
 };
 
 const ParticlesComponent = () => {

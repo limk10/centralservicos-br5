@@ -1,7 +1,7 @@
-const AuthorOne = "assets/image/author-4.jpg";
-const AuthorTwo = "assets/image/author-2.jpg";
-const AuthorThree = "assets/image/author-3.jpg";
-const AuthorFour = "assets/image/author-1.jpg";
+const AuthorOne = "/assets/image/author-4.jpg";
+const AuthorTwo = "/assets/image/author-2.jpg";
+const AuthorThree = "/assets/image/author-3.jpg";
+const AuthorFour = "/assets/image/author-1.jpg";
 
 export const MENU_ITEMS = [];
 

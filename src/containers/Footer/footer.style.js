@@ -1,5 +1,5 @@
 import styled from "styled-components";
-const FooterImage = "assets/image/footer.png";
+const FooterImage = "/assets/image/footer.png";
 
 const FooterWrapper = styled.section`
   padding: 120px 0;

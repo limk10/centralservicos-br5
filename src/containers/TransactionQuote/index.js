@@ -12,6 +12,7 @@ import { TransactionsWrapper, FeatureSection } from "./transaction.style";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import { useSeller } from "../../redux/seller/sellerSlice";
+import Input from "../../common/components/Input";
 
 const FEATURE1 = "/assets/image/logotop.png";
 const FEATURE2 = "/assets/image/logo.png";
@@ -31,6 +32,8 @@ const TransactionsHistory = ({
   const { information } = useSelector(useSeller);
   const { urlCheckout } = information;
 
+  const handleSubmit = () => { }
+
   return (
     <TransactionsWrapper id="transactions">
       <Container>
@@ -40,60 +43,66 @@ const TransactionsHistory = ({
             <FeatureBlock
               title={<Heading {...title} />}
               description={<Text {...description} />}
-            // button={<Button title="GET DOCS" {...btnStyle} />}
             />
           </Box>
           <Box className="colright" {...col} {...cardArea}>
             <FeatureSection>
               <Fade up>
                 <div className="featureWrapper">
-                  <Image
-                    style={{ width: "100px", marginBottom: 25 }}
+                  {/* <Image
+                    style={{ width: "300px", marginBottom: 25, margin: '0 0 0 auto' }}
                     src={FEATURE1}
-                    alt="Cotação de Segurços"
-                  />
+                    alt="Cotação de Seguros"
+                  /> */}
                   <Heading
                     as="h3"
-                    content="Cotação de Segurços"
+                    content="Cotação de Seguros"
                     {...featureTitleStyle}
                   />
                   <Text
-                    content="Corretora com mais de 17 anos no mercado, equipe altamente especializada, valores justos e 100% de transparência."
+                    content="Preencha o formulário abaixo com seus dados, que o resto é com a gente."
                     {...featureDescriptionStyle}
                   />
+                  <form onSubmit={handleSubmit}>
+                    <Box mt="10">
+                      <Input
+                        inputType="text"
+                        label="Nome Completo*"
+                        name="name"
+                        onChange={(e) => handleChange("name", e)}
+                        required
+                        autoComplete="new-password"
+                      />
+                    </Box>
+                    <div className="two-inputs" >
+                      <Box width='100%' mt="4" mr="2">
+                        <Input
+                          inputType="text"
+                          label="Celular *"
+                          name="phone"
+                          onChange={(e) => handleChange("phone", e)}
+                          required
+                          autoComplete="new-password"
+                        />
+                      </Box>
+                      <Box width='100%' mt="5" ml="2">
+                        <Input
+                          inputType="text"
+                          label="E-mail *"
+                          name="e-mail"
+                          onChange={(e) => handleChange("email", e)}
+                          required
+                          autoComplete="new-password"
+                        />
+                      </Box>
+                    </div>
+                  </form>
                   <Link
                     className="navbar_drawer_button"
-                    href="javascript:robocoteOpenChat()"
+                    href="#!"
                   >
                     <Button {...button} title="Fazer Cotação" />
                   </Link>
-                </div>
-              </Fade>
-              <Fade up>
-                <div className="featureWrapper">
-                  <Image
-                    style={{ width: "100px", marginBottom: 25 }}
-                    src={FEATURE2}
-                    alt="Plano Pessoa Física"
-                  />
-                  <Heading
-                    as="h3"
-                    content="Plano Pessoa Física"
-                    {...featureTitleStyle}
-                  />
-                  <Text
-                    content="Plano de proteção familiar com 5 grandes benefícios: Desconto em Saúde, com até 80% de economia em consultas e muito mais"
-                    {...featureDescriptionStyle}
-                  />
-                  {urlCheckout && (
-                    <Link
-                      className="navbar_drawer_button"
-                      target="_blank"
-                      href={urlCheckout}
-                    >
-                      <Button {...button} title="Adquirir Plano" />
-                    </Link>
-                  )}
                 </div>
               </Fade>
             </FeatureSection>
@@ -182,16 +191,17 @@ TransactionsHistory.defaultProps = {
     color: "#32325d",
     letterSpacing: "-0.010em",
     mb: "10px",
-    textAlign: ["left", "left"],
+    textAlign: 'right',
   },
   button: {
     type: "button",
-    fontSize: "13px",
+    fontSize: "21px",
     borderRadius: "4px",
     pl: "10px",
     pr: "10px",
     colors: "primaryWithBg",
     minHeight: "auto",
+    mt: '25px'
   },
   // Transactions section description default style
   featureDescriptionStyle: {
@@ -199,7 +209,7 @@ TransactionsHistory.defaultProps = {
     fontWeight: "400",
     color: "#525f7f",
     lineHeight: "27px",
-    textAlign: ["left", "left"],
+    textAlign: 'right',
   },
 };
 

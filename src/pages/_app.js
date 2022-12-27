@@ -12,21 +12,26 @@ import "swiper/css/bundle";
 import "../common/assets/css/react-slick.css";
 import "../common/assets/css/rc-collapse.css";
 import "rc-collapse/assets/index.css";
-import { useRouter } from "next/router";
+
+import Head from "next/head";
+import ResetCSS from "../common/assets/css/style";
+import { GlobalStyle } from "../containers/style";
 
 function App({ Component, pageProps }) {
-  const router = useRouter();
-  const path = (/#!(\/.*)$/.exec(router.asPath) || [])[1];
-  if (path) {
-    router.replace(path);
-  }
 
   return (
     <Provider store={store}>
       <LoadingScreen />
-      <Modal>
-        <Component {...pageProps} />
-      </Modal>
+      <Head>
+        <title>Auto atendimento | BR5 Benefícios</title>
+        <meta
+          name="Description"
+          content="Central de serviços BR5 Benfícios"
+        />
+      </Head>
+      <ResetCSS />
+      <GlobalStyle />
+      <Component {...pageProps} />
     </Provider>
   );
 }
